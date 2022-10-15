@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+   'title':'To do list',
+   'styles-url':'css/style.min.css',
+})
+<body>
+   @@include('html/header.html')
+
+   <main class="main">
+      <div class="_container">
+
+         <section class="main__add-item-block">
+            <fieldset class="add-item-block">
+               <input class="add-item-block__field" placeholder="What need to be done" type="text" id="todoField">
+               <input class="add-item-block__btn" value="Add Todo Item" type="button" id="todoAddBtn">
+            </fieldset>
+         </section>
+
+         <section class="main__todos-list-wrapper">
+            <ul class="todos-list" id="todos-list-items">
+
+              <!-- Здесь будут задачи -->
+
+            </ul>
+         </section>
+
+         <section class="main__filter-items">
+            <ul class="filter-items">
+               <li class="filter-items__item filter-items__item--current" data-type="all">
+                  <button>All</button>
+               </li>
+               <li class="filter-items__item" data-type="active">
+                  <button>Active</button>
+               </li>
+               <li class="filter-items__item" data-type="done">
+                  <button>Done</button>
+               </li>
+            </ul>
+         </section>
+
+      </div>
+   </main>
+
+   <template id="todoItemTemplate">
+      <li class="todos-list__item item-todos">
+         <span class="item-todos__check-icon"></span>
+         <p class="item-todos__name">Drink coffee</p>
+         <button class="item-todos__delete-btn">Delete</button>
+      </li>
+   </template>
+</body>
+</html>

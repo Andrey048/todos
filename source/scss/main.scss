@@ -1,0 +1,147 @@
+.main {
+   padding-bottom: 50px;
+
+   ._container {
+      display: flex;
+      flex-direction: column;
+
+      height: 100%;
+   }
+
+   &__add-item-block {
+      margin-bottom: 20px;
+   }
+   &__todos-list-wrapper {
+      flex: 1 1 auto;
+
+      margin-bottom: 30px;
+      min-height: 47px;
+   }
+   &__filter-items {
+   }
+}
+
+.add-item-block {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+
+   & > * {
+      margin-bottom: 10px;
+   }
+
+   &__field {
+      flex: 0 0 50%;
+
+      margin-right: 10px;
+      padding: 10px;
+
+      font-size: 20px;
+
+      border: 1px solid #111111;
+      border-radius: 5px;
+   }
+   &__btn {
+      padding: 10px + 2px;
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      border-radius: 6px;
+
+      @include interactiveElement;
+   }
+}
+
+.filter-items {
+   display: flex;
+
+   &__item {
+      padding: 10px;
+
+      font-size: 20px;
+
+      background-color: transparent;
+      border-top: 1px #111111 solid;
+      border-bottom: 1px #111111 solid;
+   }
+   &__item--current {
+      border-top: 1px tomato solid;
+      border-bottom: 1px tomato solid;
+   }
+   &__item:first-child {
+      border-left: 1px #111111 solid;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+   }
+   &__item--current:first-child {
+      border-left: 1px tomato solid;
+   }
+   &__item:last-child {
+      border-right: 1px #111111 solid;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+   }   &__item--current:last-child {
+      border-right: 1px tomato solid;
+   }
+   &__item--current {
+      @include interactiveElement;
+   }
+}
+
+.todos-list {
+   min-height: 100%;
+
+   border: 1px solid silver;
+   border-radius: 5px;
+
+   &__item {
+
+   }
+}
+
+.item-todos {
+   display: flex;
+   align-items: center;
+
+   padding: 10px;
+
+   border-bottom: 1px solid silver;
+
+   &:last-child {
+      border-bottom: none;
+   }
+
+   &__check-icon {
+      flex: 0 0 17px;
+
+      display: inline-block;
+      height: 17px;
+      margin-right: 10px;
+
+      border: 1px solid gray;
+      border-radius: 3px;
+
+      cursor: pointer;
+   }
+   &--checked &__check-icon {
+      background-image: url(../images/check.png);
+      background-size: 14px 14px;
+      background-position: center center;
+   }
+   &__name {
+      margin-right: 10px;
+
+      font-size: 20px;
+
+      cursor: pointer;
+   }
+   &--checked &__name {
+      text-decoration: line-through;
+      color: silver;
+   }
+   &__delete-btn {
+      margin-left: auto;
+   }
+}

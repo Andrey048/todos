@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "font-name";
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-name.woff2) format("woff2"), url(../fonts/font-name.woff) format("woff"), url(../fonts/font-name.ttf) format("truetype");
+}
+._container {
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+._visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+._hidden {
+  display: none !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+body .main {
+  flex: 1 1 auto;
+}
+body.body-lock {
+  overflow: hidden;
+}
+
+img, svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a, button {
+  color: inherit;
+  font-size: inherit;
+  background-color: inherit;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.header__inner > * {
+  margin-bottom: 10px;
+}
+.header__title {
+  font-size: 55px;
+  font-weight: bold;
+}
+.header__statistics {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.main {
+  padding-bottom: 50px;
+}
+.main ._container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.main__add-item-block {
+  margin-bottom: 20px;
+}
+.main__todos-list-wrapper {
+  flex: 1 1 auto;
+  margin-bottom: 30px;
+  min-height: 47px;
+}
+.add-item-block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.add-item-block > * {
+  margin-bottom: 10px;
+}
+.add-item-block__field {
+  flex: 0 0 50%;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #111111;
+  border-radius: 5px;
+}
+.add-item-block__btn {
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: tomato;
+}
+
+.filter-items {
+  display: flex;
+}
+.filter-items__item {
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  border-top: 1px #111111 solid;
+  border-bottom: 1px #111111 solid;
+}
+.filter-items__item--current {
+  border-top: 1px tomato solid;
+  border-bottom: 1px tomato solid;
+}
+.filter-items__item:first-child {
+  border-left: 1px #111111 solid;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.filter-items__item--current:first-child {
+  border-left: 1px tomato solid;
+}
+.filter-items__item:last-child {
+  border-right: 1px #111111 solid;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.filter-items__item--current:last-child {
+  border-right: 1px tomato solid;
+}
+.filter-items__item--current {
+  color: #ffffff;
+  background-color: tomato;
+}
+
+.todos-list {
+  min-height: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.item-todos {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid silver;
+}
+.item-todos:last-child {
+  border-bottom: none;
+}
+.item-todos__check-icon {
+  flex: 0 0 17px;
+  display: inline-block;
+  height: 17px;
+  margin-right: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.item-todos--checked .item-todos__check-icon {
+  background-image: url(../images/check.png);
+  background-size: 14px 14px;
+  background-position: center center;
+}
+.item-todos__name {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.item-todos--checked .item-todos__name {
+  text-decoration: line-through;
+  color: silver;
+}
+.item-todos__delete-btn {
+  margin-left: auto;
+}
